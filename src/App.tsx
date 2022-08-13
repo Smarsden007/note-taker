@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { NoteState } from "./notesReducer";
 import { addNote } from "./action";
 import { MasterContainer, NoteBox, SubContainer, List} from "./styles/NoteStyles";
-import { Container, Section } from "./globalStyles";
 import {RiTodoLine} from 'react-icons/ri'
 function App() {
   const notes = useSelector<NoteState, NoteState["notes"]>(
@@ -15,12 +14,15 @@ function App() {
   const onAddNote = (note: string) => {
     dispatch(addNote(note));
   };
+const todo = {
+  margin: '5rem',
+}
 
   return (
     <>
       <SubContainer>
       <MasterContainer>
-      <RiTodoLine size={200}/>
+      <RiTodoLine size={200} style={todo}/>
       <NewNoteInput addNote={onAddNote} />
       <hr />
       

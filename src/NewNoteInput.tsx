@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import { NoteButton, NoteInput } from "./styles/NewNoteStyles";
 
 interface NewNoteInputProps {
   addNote(note: string): void;
@@ -18,14 +19,14 @@ export const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
 
   return (
     <div>
-      <input
+      <NoteInput
         onChange={updateNote}
         value={note}
         type="text"
         name="note"
         placeholder="Note"
       />
-      <button onClick={onAddNoteClick}>Add note</button>
+      <NoteButton onClick={onAddNoteClick}>Add Note</NoteButton>
     </div>
   );
 };
