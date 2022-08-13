@@ -10,10 +10,11 @@ export const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
   const updateNote = (event: ChangeEvent<HTMLInputElement>) => {
     setNote(event.target.value);
   };
-const onAddNoteClick = () => {
-    addNote(note)
-    setNote("")
-}
+
+  const onAddNoteClick = () => {
+    addNote(note);
+    setNote("");
+  };
 
   return (
     <div>
@@ -24,7 +25,7 @@ const onAddNoteClick = () => {
         name="note"
         placeholder="Note"
       />
-      <button onClick={onAddNoteClick}>Add Note</button>
+      <button onClick={onAddNoteClick}>Add note</button>
     </div>
   );
 };
